@@ -6,4 +6,15 @@ public class SaltWaterFish extends Fish {
 		super(fishSpeciasID, fishSpeciasName, fishAmount, aquariumID);
 	}
 
+	public void showFishDetail() {
+		// TODO Auto-generated method stub
+		System.out.println(getFishSpeciasID() + " | " + getFishSpeciasName() + " | Saltwater | " + getFishAmount()
+				+ " | " + getAquariumID());
+	}
+
+	@Override
+	public void showSellMessage() {
+		// TODO Auto-generated method stub
+		System.out.println("I will got to the sea");
+	}
 }

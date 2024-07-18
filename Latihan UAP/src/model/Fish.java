@@ -14,6 +14,10 @@ public abstract class Fish {
 		this.aquariumID = aquariumID;
 	}
 
+	public abstract void showFishDetail();
+
+	public abstract void showSellMessage();
+
 	public String getFishSpeciasID() {
 		return fishSpeciasID;
 	}

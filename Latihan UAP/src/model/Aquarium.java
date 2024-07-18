@@ -12,6 +12,10 @@ public class Aquarium {
 		this.aquariumCapacity = aquariumCapacity;
 	}
 
+	public void showAquariumData() {
+		System.out.println(aquariumID + " | " + aquariumColor + " | " + aquariumCapacity + " | ");
+	}
+
 	public String getAquariumID() {
 		return aquariumID;
 	}
