@@ -1,0 +1,60 @@
+Fish Store
+
+Entities/Tables
+______________________________________
+Aquarium
+- AquariumId CHAR(5) PRIMARY KEY
+- AquariumColor VARCHAR(50)
+- AquariumCapacity INT
+
+Fish Species
+- FishSpeciesId CHAR(5) PRIMARY KEY
+- FishSpeciesName VARCHAR(50)
+- FishSpeciesType VARCHAR(50)
+- FishAmount INT
+- AquariumId CHAR(5) FOREIGN KEY REFERENCES Aquarium(AquariumId)
+
+
+Menus
+______________________________________
+1. Insert New Fish Species
+2. View Fish Species
+3. Sell Fish
+4. Add Aquarium
+5. Show Aquariums
+6. Exit
+
+
+Descriptions
+______________________________________
+1. Insert New Fish Species
+	- If there is no Aquarium, show message 'Please insert an aquarium first'.
+	- Fish Species: 5 - 10 characters.
+	- Fish Species Type: must be 'Freshwater' or 'Saltwater' (case sensitive).
+	- Fish Amount: must be more than 0.
+	- Aquarium ID: must exist in the database and the amount cannot exceed the aquarium capacity.
+	- Generate a random fish species ID using the format 'FIXXX' where X is a number ranging from 0 to 9. The ID must be unique.
+	- Insert the fish species into the database.
+
+2. View Fish Species
+	- If there is no fish, show 'There is no fish' message.
+	- Else, show all fish species ID, Fish Species, Fish Species Type, and the Fish Amount.
+
+3. Sell Fish
+	- If there is no fish, show 'There is no fish' message.
+	- Else, show all fish species ID, Fish Species, Fish Species Type, and the Fish Amount.
+	- Prompt user to select a fish species ID (must exist).
+	- Prompt user to input the amount of fish to be sold (must not be more than the existing amount).
+	- Update the fish amount from the database.
+	- If the fish amount is 0, delete the fish species from the database.
+	- Show 'I will go to the sea' message if the fish is Saltwater type and show 'I will go to the river' message if the fish is Freshwater type
+
+4. Add Aquarium
+	- Aquarium Color: must be 'Green' or 'Red' or 'Blue' (case sensitive).
+	- Aquarium Capacity: must be between 100 - 500 (inclusive).
+	- Generate a random aquarium ID using the format 'AQXXX' where X is a number ranging from 0 to 9. The ID must be unique.
+	- Insert the aquarium into the database.
+
+5. Show Aquariums
+	- If there is no aquarium, show 'There is no aquarium' message.
+	- Else, show all Aquarium ID, Aquarium Color, and Aquarium Capacity.
