@@ -44,7 +44,7 @@ public class Connect {
 	// INSERT UPDATE AND DELETE
 	public void executeUpdate(String query) {
 		try {
-			stmt.executeQuery(query);
+			stmt.executeUpdate(query);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

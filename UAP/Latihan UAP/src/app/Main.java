@@ -41,7 +41,7 @@ public class Main {
 					temp.add(f);
 
 				} else if (fishSpeciesType.equals("Saltwater")) {
-					SaltWaterFish s = new SaltWaterFish(fishAquariumID, fishSpeciesName, fishSpeciesAmount,
+					SaltWaterFish s = new SaltWaterFish(fishSpeciesID, fishSpeciesName, fishSpeciesAmount,
 							fishAquariumID);
 					temp.add(s);
 				}
@@ -126,7 +126,7 @@ public class Main {
 	Boolean checkFishSpeciesID(String fishSpeciesID) {
 		refreshFishListData();
 		for (Fish fish : fishList) {
-			if (fishSpeciesID.equals(fish.getFishSpeciasID())) {
+			if (fishSpeciesID.equals(fish.getFishSpeciesID())) {
 				return false;
 			}
 		}
@@ -145,6 +145,7 @@ public class Main {
 
 	void addAquariumMenu() {
 		cls();
+		refreshAquariumListData();
 		String aquariumColor;
 		do {
 			System.out.print("Aquarium Color [must be 'Green' or 'Red' or 'Blue' (case sensitive)]:");
@@ -168,7 +169,7 @@ public class Main {
 		String query = String.format("INSERT INTO aquarium VALUE('%s', '%s', '%d')", genAqID, aquariumColor,
 				aquariumCapacity);
 		db.executeUpdate(query);
-		refreshAquariumListData();
+//		refreshAquariumListData();
 
 	}
 
@@ -220,8 +221,8 @@ public class Main {
 	void insertNewFishSpesiesMenu() {
 		cls();
 		refreshFishListData();
-		if (aquariumList.isEmpty()) {
-			System.out.println("Please insert an aquarium");
+		if (fishList.isEmpty()) {
+			System.out.println("Please insert a fish");
 		} else {
 			String fishSpecies;
 			do {
@@ -278,7 +279,7 @@ public class Main {
 		refreshFishListData();
 		Fish f = null;
 		for (Fish fish : fishList) {
-			if (fishSpeciesID.equals(fish.getFishSpeciasID())) {
+			if (fishSpeciesID.equals(fish.getFishSpeciesID())) {
 				f = fish;
 				break;
 			}
@@ -295,7 +296,7 @@ public class Main {
 		Fish f = null;
 
 		for (Fish fish : fishList) {
-			if (fish.getFishSpeciasID().equals(fishSpeciesID)) {
+			if (fish.getFishSpeciesID().equals(fishSpeciesID)) {
 				f = fish;
 				break;
 			}
@@ -303,7 +304,7 @@ public class Main {
 
 		if (f.getFishAmount().equals(0)) {
 			showSellMessage(fishSpeciesID);
-			String query = String.format("DELETE FROM fishspecies WHERE fishSpeciesId = '%s'", fishSpeciesID);
+			String query = String.format("DELETE FROM fishspecies WHERE FishSpeciesId = '%s'", fishSpeciesID);
 			db.executeUpdate(query);
 		}
 	}
@@ -313,7 +314,7 @@ public class Main {
 		Fish f = null;
 
 		for (Fish fish : fishList) {
-			if (fish.getFishSpeciasID().equals(fishSpeciesID)) {
+			if (fish.getFishSpeciesID().equals(fishSpeciesID)) {
 				f = fish;
 				break;
 			}
@@ -334,23 +335,23 @@ public class Main {
 
 			String fishspeciesID;
 			do {
-				System.out.println("Fish Species ID [must exist]: ");
+				System.out.print("Fish Species ID [must exist]: ");
 				fishspeciesID = sc.nextLine();
 			} while (checkFishSpeciesID(fishspeciesID));
 
 			Integer fishSold;
 			do {
-				System.out.println("Fish amout be sold [must not be more than the existing amout]: ");
+				System.out.print("Fish amout be sold [must not be more than the existing amout]: ");
 				fishSold = sc.nextInt();
 				sc.nextLine();
 			} while (checkFishAmount(fishspeciesID, fishSold));
 
 			String query = String.format(
-					"UPDATE fishspecies SET fishAmount = fishAmount - %d WHERE fishSpeciesId = '%s'", fishSold,
+					"UPDATE fishspecies SET FishAmount = FishAmount - %d WHERE FishSpeciesId = '%s'", fishSold,
 					fishspeciesID);
 			db.executeUpdate(query);
 
-			refreshFishListData();
+//			refreshFishListData();
 			checkFishSpeciesForDeletion(fishspeciesID);
 
 		}

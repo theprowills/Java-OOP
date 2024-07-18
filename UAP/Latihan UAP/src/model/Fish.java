@@ -1,15 +1,15 @@
 package model;
 
 public abstract class Fish {
-	private String fishSpeciasID;
-	private String fishSpeciasName;
+	private String fishSpeciesID;
+	private String fishSpeciesName;
 	private Integer fishAmount;
 	private String aquariumID;
 
-	public Fish(String fishSpeciasID, String fishSpeciasName, Integer fishAmount, String aquariumID) {
+	public Fish(String fishSpeciesID, String fishSpeciesName, Integer fishAmount, String aquariumID) {
 		super();
-		this.fishSpeciasID = fishSpeciasID;
-		this.fishSpeciasName = fishSpeciasName;
+		this.fishSpeciesID = fishSpeciesID;
+		this.fishSpeciesName = fishSpeciesName;
 		this.fishAmount = fishAmount;
 		this.aquariumID = aquariumID;
 	}
@@ -18,20 +18,20 @@ public abstract class Fish {
 
 	public abstract void showSellMessage();
 
-	public String getFishSpeciasID() {
-		return fishSpeciasID;
+	public String getFishSpeciesID() {
+		return fishSpeciesID;
 	}
 
-	public void setFishSpeciasID(String fishSpeciasID) {
-		this.fishSpeciasID = fishSpeciasID;
+	public void setFishSpeciesID(String fishSpeciesID) {
+		this.fishSpeciesID = fishSpeciesID;
 	}
 
-	public String getFishSpeciasName() {
-		return fishSpeciasName;
+	public String getFishSpeciesName() {
+		return fishSpeciesName;
 	}
 
-	public void setFishSpeciasName(String fishSpeciasName) {
-		this.fishSpeciasName = fishSpeciasName;
+	public void setFishSpeciesName(String fishSpeciesName) {
+		this.fishSpeciesName = fishSpeciesName;
 	}
 
 	public Integer getFishAmount() {
