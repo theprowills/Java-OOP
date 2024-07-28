@@ -1,0 +1,14 @@
+Course Outline
+===============================
+- konsep dasar dari polymorphism []
+	- overloading []
+	- overriding []
+- overloading dan overriding []
+- final method []
+- abstraction pada class dan method []
+- menyimpan child class menggunakan collection dengan tipe data parent class []
+- review materi untuk persiapan quiz []
+- briefing quiz dan material criteria []
+
+note:
+use abstract classes when you want to provide a default implementation, have a strong relationship between classes, or restrict instantiation. Use interfaces when you want to define a contract, support multiple inheritances, or achieve loose coupling.

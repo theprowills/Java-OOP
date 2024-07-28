@@ -1,0 +1,22 @@
+SeqA = Seq('CGATCGAT');
+SeqB = Seq('ACGTGTAC');
+
+Computer Biology Session 4
+-- Alignment -> Mencari kemiripan antara kedua sequence 
+	[] Global Alignment -> Mencari alignment terbaik dari sequence secara keseluruhan (gak ada gap)
+	[] Local Alignment -> Mencari alignment terbaik dari sequence yang ada (ada gap)
+-- Similarity Analysis -> Mencari nilai persamaan dari kedua sequence
+	[] xx
+	[] mx
+	[] ms
+~ custom alignment 
+	match +1
+	mismatch -1
+	gap start -0.5
+	gap extend -0.1
+[] Hamming Distance -> Mencari nilai perbedaan antara dua sequence dengan urutannya kedua sequence
+[] Levenshtein -> Mencari nilai perbedaan dengan menghitung berapa perubahan yang dibutuhkan untuk mengubah 1 sequence agar sama dengan sequence yang lain
+[] Dot Plot -> Sebuah matriks neuklotida yang memunculkan grafik dot plot dari neuklotida yang sama antara kedua sequence
+
+
+

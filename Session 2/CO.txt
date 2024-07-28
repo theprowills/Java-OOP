@@ -1,0 +1,36 @@
+IR23-1 - Nicholas Irvin SUhendi
+
+Wrapper Class, Math, Random
+________________________________
+1. Wrapper Class
+	> Definisi
+	> Tipe-tipe Wrapper Class
+	> Contoh kegunaan Wrapper Class
+
+2. String methods
+	> startsWith / endsWith
+	> equals
+	> toUpperCase / toLowerCase
+	> isEmpty
+	> split
+	> length
+
+3. Type Casting
+
+4. Ascii
+
+5. Math methods
+	> abs
+	> max
+	> min
+	> round
+	> sqrt
+	> pow
+	> ceil
+	> floor
+
+6. Random methods
+	> nextInt
+	> nextDouble
+
+7. Exception Handling
